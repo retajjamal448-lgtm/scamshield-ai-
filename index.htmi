@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCAMSHIELD AI - درع</title>
+<style>
+body{font-family:Arial;background:#0a1931;color:white;text-align:center;padding:20px}
+.card{background:#13294b;padding:20px;border-radius:15px;margin:15px auto;max-width:500px;border:1px solid #d4af37}
+input,textarea{width:90%;padding:12px;border-radius:10px;margin:10px;font-size:16px}
+button{background:#d4af37;color:#0a1931;padding:15px 30px;border:none;border-radius:10px;font-weight:bold;font-size:18px;cursor:pointer;margin:5px}
+.danger{background:#ff2d2d;padding:15px;border-radius:10px;margin-top:10px}
+.safe{background:#00c853;padding:15px;border-radius:10px;margin-top:10px}
+</style>
+</head>
+<body>
+<h1>🛡️ SCAMSHIELD AI - درع</h1>
+<p>شرطة أبوظبي | الحماية الذكية من النصب الإلكتروني</p>
+<div class="card">
+<h2>افحص رسالة أو رابط</h2>
+<textarea id="msg" rows="3" placeholder="الصق هنا الرسالة أو الرابط..."></textarea><br>
+<button onclick="check()">افحص الآن</button>
+<div id="result"></div>
+</div>
+<div class="card">
+<h2>📊 لوحة تحكم الشرطة</h2>
+<p>بلاغات اليوم: <b>1,240</b></p>
+<p>دقة الكشف: <b>98%</b></p>
+<p>أشخاص تمت حمايتهم: <b>12,450</b></p>
+<button onclick="alert('تم إرسال البلاغ لشرطة أبوظبي بنجاح!')">إبلاغ الشرطة</button>
+</div>
+<script>
+function check(){
+let t=document.getElementById('msg').value;
+let r=document.getElementById('result');
+if(t.includes('بنك')||t.includes('اغلاق')||t.includes('حسابك')||t.includes('فزت')||t.includes('http')||t.includes('رابط')){
+r.innerHTML='<div class=danger>⚠️ خطر 98% - رابط نصب! لا تفتحه</div>';
+}else if(t.length<3){r.innerHTML='الصق رسالة أولا';}
+else{r.innerHTML='<div class=safe>✅ آمن 95% - لا يوجد خطر</div>';}
+}
+</script>
+</body>
+</html>
